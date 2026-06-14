@@ -1,0 +1,8 @@
+# Copyright (c) 2026 your father
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MORE_ErGO_LEFT
+    def_bool $(shields_list_contains,MORE_ErGO_left)
+
+config SHIELD_MORE_ErGO_RIGHT
+    def_bool $(shields_list_contains,MORE_ErGO_right)
