@@ -1,4 +1,4 @@
-#include "caldera.dtsi"
+#include "MORE_ErGO.dtsi"
 
 &kscan0 {
     col-gpios
