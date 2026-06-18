@@ -21,12 +21,12 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
                                 bindings = <
-                                
+
               &kp LBRC     &kp W &kp Z                   &kp V &kp D       &kp DOT
                      &kp P &kp Y &kp F                   &kp G &kp C  &kp L 
     &kp SEMI  &kp A  &kp O &kp E &kp I &kp U       &kp R &kp H  &kp T &kp N &kp S &kp SQT
     &kp QMARK &kp Q       &kp J &kp K                    &kp X &kp B        &kp M &kp FSLH 
-                    &kp LGUI &mo 1 &kp SPACE       &kp RET &mo 2 &kp RALT
+                    &kp SPACE &kp LGUI             &kp RET  &kp RALT
                         >;
                 };
                 lower_layer {
