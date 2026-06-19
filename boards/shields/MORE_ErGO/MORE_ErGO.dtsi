@@ -4,7 +4,7 @@
     leds {
         compatible = "gpio-leds";
         status_led: status_led {
-            gpios = &pro_micro 10 GPIO_ACTIVE_HIGH;
+             gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
         };
     };
 
