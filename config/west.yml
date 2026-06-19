@@ -6,6 +6,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: bluedrink9
+      url-base: https://github.com/bluedrink9
+
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -14,6 +17,9 @@ manifest:
       import: app/west.yml
     - name: zmk-analog-input-driver
       remote: badjeff
+      revision: main
+    - name: zmk-poor-mans-led-indicator
+      remote: bluedrink9
       revision: main
   self:
     path: config
