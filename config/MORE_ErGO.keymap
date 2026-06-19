@@ -71,7 +71,7 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
                                 bindings = <
-
+                // keys left                            //keys right
               &kp LBRC     &kp W &kp Z                      &kp V   &kp D        &kp DOT
                      &kp P &kp Y &kp F                      &kp G   &kp C  &kp L 
 

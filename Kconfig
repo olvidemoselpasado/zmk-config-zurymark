@@ -1,0 +1,3 @@
+config MORE_ERGO_STATUS_LED
+    bool "Blink status LED"
+    default n

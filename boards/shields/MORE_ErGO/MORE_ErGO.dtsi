@@ -1,6 +1,13 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
+    leds {
+        compatible = "gpio-leds";
+        status_led: status_led {
+            gpios = &pro_micro 10 GPIO_ACTIVE_HIGH;
+        };
+    };
+
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
