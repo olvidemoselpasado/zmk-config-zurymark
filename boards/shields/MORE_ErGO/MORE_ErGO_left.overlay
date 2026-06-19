@@ -8,7 +8,7 @@
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
         x-ch {
-            io-channels = <&pro_micro 21>;      // ← AIN del eje X (0=P0.02, 5=P0.29, 7=P0.31...) AJÚSTALO
+            io-channels = <&adc 7>;      // ← AIN del eje X (0=P0.02, 5=P0.29, 7=P0.31...) AJÚSTALO
             mv-mid = <1650>;             // voltaje en reposo (MÍDELO)
             mv-min-max = <1600>;
             mv-deadzone = <40>;
@@ -18,7 +18,7 @@
             input-code = <INPUT_REL_HWHEEL>;  // scroll lateral
         };
         y-ch {
-            io-channels = <&pro_micro 20>;      // ← AIN del eje Y AJÚSTALO
+            io-channels = <&adc 5>;      // ← AIN del eje Y AJÚSTALO
             mv-mid = <1650>;
             mv-min-max = <1600>;
             mv-deadzone = <40>;
