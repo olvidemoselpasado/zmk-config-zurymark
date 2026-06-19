@@ -1,4 +1,39 @@
 #include "MORE_ErGO.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&adc { status = "okay"; };
+
+/ {
+    anin0: analog_input_0 {
+        compatible = "zmk,analog-input";
+        sampling-hz = <100>;
+        x-ch {
+            io-channels = <&adc 0>;      // ← AIN del eje X (0=P0.02, 5=P0.29, 7=P0.31...) AJÚSTALO
+            mv-mid = <1650>;             // voltaje en reposo (MÍDELO)
+            mv-min-max = <1600>;
+            mv-deadzone = <40>;
+            scale-multiplier = <1>;
+            scale-divisor = <30>;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_HWHEEL>;  // scroll lateral
+        };
+        y-ch {
+            io-channels = <&adc 7>;      // ← AIN del eje Y AJÚSTALO
+            mv-mid = <1650>;
+            mv-min-max = <1600>;
+            mv-deadzone = <40>;
+            scale-multiplier = <1>;
+            scale-divisor = <30>;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_WHEEL>;   // scroll vertical
+        };
+    };
+
+    anin0_listener {
+        compatible = "zmk,input-listener";
+        device = <&anin0>;
+    };
+};
 
 &kscan0 {
     col-gpios
