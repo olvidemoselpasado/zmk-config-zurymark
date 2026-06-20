@@ -100,7 +100,7 @@
                  &kp P        &kp Y  &kp F                                          &kp G         &kp C         &kp L
           &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
           &kp QMARK &kp X        &kp J  &kp DOT  &kp SPACE               &kp RET  &kp COMMA  &kp B         &kp M         &kp FSLH
-                                               &td_lower 1               &td_raise 2
+                                               &td_lower               &td_raise
                     >;
                 };
 
