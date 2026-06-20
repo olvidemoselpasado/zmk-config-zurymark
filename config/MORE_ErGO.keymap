@@ -22,19 +22,19 @@
             bindings = <&bootloader>;
             require-prior-idle-ms = <200>;
         };
-        // combo_bootloader_right {
-        //     timeout-ms = <50>;
-        //     key-positions = <23 31 9>;
-        //     bindings = <&bootloader>;
-        //     require-prior-idle-ms = <200>;
-        // };
+        combo_bootloader_right {
+            timeout-ms = <50>;
+            key-positions = <23 31 9>;
+            bindings = <&bootloader>;
+            require-prior-idle-ms = <200>;
+        };
 
-        // combo_off {
-        //     timeout-ms = <50>;
-        //     key-positions = <0 8>;
-        //     bindings = <&soft_off>;
-        //     require-prior-idle-ms = <250>;
-        // };
+        combo_off {
+            timeout-ms = <50>;
+            key-positions = <0 8 12>;
+            bindings = <&soft_off>;
+            require-prior-idle-ms = <250>;
+        };
     };
 
     conditional_layers {
@@ -75,16 +75,16 @@
 
         default_layer {
         /*
-         *  [    W    Z                 V    D    .
+         *  ,    W    Z                 V    D    .
          *  P    Y    F                 G    C    L
          *  ;    A    O    E    I    U   R    H    T    N    S    '
          *  ?    Q    J    K   SPC  RET  X    B    M    /
          *                    mo1       mo2
          */
                     bindings = <
-          &kp LBRC      &kp W        &kp Z                                          &kp V         &kp D                      &kp DOT
+          &kp COMMA      &kp W        &kp Z                                          &kp V         &kp D                      &kp DOT
                  &kp P        &kp Y  &kp F                                          &kp G         &kp C         &kp L
-          &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RSHFT H  &hmr RCTRL T  &hmr RALT N  &hmr RGUI S  &kp SQT
+          &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RCTRL H  &hmr RSHFT T  &hmr RALT N  &hmr RGUI S  &kp SQT
           &kp QMARK &kp Q        &kp J  &kp K  &kp SPACE                  &kp RET  &kp X  &kp B         &kp M         &kp FSLH
                                                &mo 1                      &mo 2
                     >;
