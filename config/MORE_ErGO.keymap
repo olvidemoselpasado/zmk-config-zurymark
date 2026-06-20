@@ -22,19 +22,19 @@
             bindings = <&bootloader>;
             require-prior-idle-ms = <200>;
         };
-        combo_bootloader_right {
-            timeout-ms = <50>;
-            key-positions = <23 31 9>;
-            bindings = <&bootloader>;
-            require-prior-idle-ms = <200>;
-        };
+        // combo_bootloader_right {
+        //     timeout-ms = <50>;
+        //     key-positions = <23 31 9>;
+        //     bindings = <&bootloader>;
+        //     require-prior-idle-ms = <200>;
+        // };
 
-        combo_off {
-            timeout-ms = <50>;
-            key-positions = <0 8>;
-            bindings = <&soft_off>;
-            require-prior-idle-ms = <250>;
-        };
+        // combo_off {
+        //     timeout-ms = <50>;
+        //     key-positions = <0 8>;
+        //     bindings = <&soft_off>;
+        //     require-prior-idle-ms = <250>;
+        // };
     };
 
     conditional_layers {
