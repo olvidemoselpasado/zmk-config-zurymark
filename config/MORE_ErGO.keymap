@@ -68,6 +68,20 @@
             hold-trigger-key-positions = < 0 1 2 6 7 8 12 13 14 15 16 17 24 25 26 27 28 >;
             hold-trigger-on-release;
         };
+
+        td_lower: tap_dance_lower {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&tog 1>;
+        };
+
+        td_raise: tap_dance_raise {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 2>, <&tog 2>;
+        };
     };
 
     keymap {
@@ -82,22 +96,22 @@
          *                    mo134              mo235
          */
                     bindings = <
-          &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp X
+          &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp Q
                  &kp P        &kp Y  &kp F                                          &kp G         &kp C         &kp L
           &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
-          &kp QMARK &kp Q        &kp J  &kp DOT  &kp SPACE                  &kp RET  &kp COMMA  &kp B         &kp M         &kp FSLH
-                                               &mo 1                      &mo 2
+          &kp QMARK &kp X        &kp J  &kp DOT  &kp SPACE               &kp RET  &kp COMMA  &kp B         &kp M         &kp FSLH
+                                               &td_lower 1               &td_raise 2
                     >;
                 };
 
         lower_layer {
              /*  Números (izq) + navegación (der) + GUI para Hyprland  */
                     bindings = <
-          &kp N9   &kp N8   &kp N7                                      &trans    &trans    &trans
-               &kp N4   &kp N5  &kp N6                                  &kp HOME  &kp PG_UP &kp PG_DN
-          &kp N3 &kp N2 &kp N0 &kp N1 &trans &trans          &kp END    &kp UP  &kp DOWN  &kp LEFT   &kp RIGHT    &trans
-          &trans &trans &trans &trans &kp LGUI               &kp LGUI     &trans    &trans    &trans     &trans
-                                      &trans                 &trans
+          &kp N9   &kp N8   &kp N7                                      &trans    &kp TAB    &trans
+               &kp N4   &kp N5  &kp N6                                  &kp RSHFT &kp RCTRL &kp RALT 
+          &trans &kp N3 &kp N2 &kp N0 &kp 1 &kp END          &kp trans    &kp UP  &kp DOWN  &kp LEFT   &kp RIGHT    &trans
+                 &trans &trans &trans &kp HOME &kp LGUI      &kp LGUI     &kp trans    &trans    &trans     &trans
+                                             &trans          &trans
                     >;
                 };
 
