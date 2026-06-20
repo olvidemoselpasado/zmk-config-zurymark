@@ -82,10 +82,10 @@
          *                    mo1       mo2
          */
                     bindings = <
-          &kp COMMA      &kp W        &kp Z                                          &kp V         &kp D                      &kp DOT
+          &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp X
                  &kp P        &kp Y  &kp F                                          &kp G         &kp C         &kp L
           &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RCTRL H  &hmr RSHFT T  &hmr RALT N  &hmr RGUI S  &kp SQT
-          &kp QMARK &kp Q        &kp J  &kp K  &kp SPACE                  &kp RET  &kp X  &kp B         &kp M         &kp FSLH
+          &kp QMARK &kp Q        &kp J  &kp DOT  &kp SPACE                  &kp RET  &kp COMMA  &kp B         &kp M         &kp FSLH
                                                &mo 1                      &mo 2
                     >;
                 };
