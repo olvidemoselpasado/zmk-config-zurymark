@@ -18,13 +18,13 @@
 
         combo_bootloader_left {
             timeout-ms = <50>;
-            key-positions = <12 24>;
+            key-positions = <12 24 8>;
             bindings = <&bootloader>;
             require-prior-idle-ms = <200>;
         };
         combo_bootloader_right {
             timeout-ms = <50>;
-            key-positions = <23 31>;
+            key-positions = <23 31 9>;
             bindings = <&bootloader>;
             require-prior-idle-ms = <200>;
         };
@@ -77,7 +77,7 @@
                     bindings = <
           &kp LBRC      &kp W        &kp Z                                          &kp V         &kp D                      &kp DOT
                  &kp P        &kp Y  &kp F                                          &kp G         &kp C         &kp L
-          &kp SEMI  &hml LGUI A  &hml LALT O  &hml LCTRL E  &hml LSHFT I  &kp U   &kp R  &hmr RSHFT H  &hmr RCTRL T  &hmr RALT N  &hmr RGUI S  &kp SQT
+          &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RSHFT H  &hmr RCTRL T  &hmr RALT N  &hmr RGUI S  &kp SQT
           &kp QMARK &kp Q        &kp J  &kp K  &kp SPACE                  &kp RET  &kp X  &kp B         &kp M         &kp FSLH
                                                &mo 1                      &mo 2
                     >;
@@ -86,10 +86,10 @@
         lower_layer {
              /*  Números (izq) + navegación (der) + GUI para Hyprland  */
                     bindings = <
-          &kp N1   &kp N2   &kp N3                                      &trans     &trans   &trans
-               &kp N4   &kp N5  &kp N6                                  &kp HOME   &kp PG_UP &kp PG_DN
-          &kp N7 &kp N8 &kp N9 &kp N0 &trans &trans          &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &kp END  &kp LGUI
-          &trans &trans &trans &trans &trans                 &trans    &trans    &trans   &trans     &trans
+          &kp N1   &kp N2   &kp N3                                      &trans    &trans    &trans
+               &kp N4   &kp N5  &kp N6                                  &kp HOME  &kp PG_UP &kp PG_DN
+          &kp N7 &kp N8 &kp N9 &kp N0 &trans &trans          &kp END    &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT    &trans
+          &trans &trans &trans &trans &kp LGUI               &kp LGUI     &trans    &trans    &trans     &trans
                                       &trans                 &trans
                     >;
                 };
