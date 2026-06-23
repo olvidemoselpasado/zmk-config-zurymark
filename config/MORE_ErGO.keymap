@@ -13,8 +13,8 @@
         combo_enter   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <19 21>; bindings = <&kp RET>; };
         combo_backs   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <21 22>; bindings = <&kp BSPC>; };
         combo_esc     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <12 13>; bindings = <&kp ESC>; };
-        combo_tab     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <13 14>; bindings = <&kp TAB>; };
-        combo_caps_w  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <15 16>; bindings = <&caps_word>; };
+        combo_tab     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <15 16>; bindings = <&kp TAB>; };
+        combo_caps_w  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <13 14>; bindings = <&caps_word>; };
 
         combo_bootloader_left {
             timeout-ms = <50>;
@@ -97,7 +97,7 @@
          */
                     bindings = <
           &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp Q
-                 &kp P        &kp Y  &kp F                                          &kp G         &kp C         &kp L
+              &kp Y  &kp P        &kp F                                          &kp G         &kp C         &kp L
           &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
           &kp QMARK &kp X        &kp J  &kp DOT  &kp SPACE               &kp RET  &kp COMMA  &kp B         &kp M         &kp FSLH
                                                &td_lower               &td_raise
