@@ -15,9 +15,9 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: zmk-analog-input-driver
-      remote: badjeff
-      revision: main
+    # - name: zmk-analog-input-driver
+    #   remote: badjeff
+    #   revision: main
     - name: zmk-poor-mans-led-indicator
       remote: bluedrink9
       revision: main
