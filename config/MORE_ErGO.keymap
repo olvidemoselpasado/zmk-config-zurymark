@@ -2,8 +2,8 @@
  * Copyright (c) 2020 The ZMK Contributors
  * SPDX-License-Identifier: MIT
  */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 35    
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -15,9 +15,9 @@
     combos {
         compatible = "zmk,combos";
         combo_backs   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <19 21>; bindings = <&kp BSPC>; };
-        combo_esc     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <12 13>; bindings = <&kp ESC>; };
+        combo_esc     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <14 16>; bindings = <&kp ESC>; };
         combo_tab     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <15 16>; bindings = <&kp TAB>; };
-        combo_caps_w  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <13 14>; bindings = <&caps_word>; };
+        combo_caps_w  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <12 13>; bindings = <&caps_word>; };
 
         combo_bootloader_left {
             timeout-ms = <50>;
@@ -72,18 +72,28 @@
             hold-trigger-on-release;
         };
 
+        // Pulgar izquierdo: hold=raise(2), tap=Space
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
+
         td_lower: tap_dance_lower {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&tog 1>;
+            bindings = <&sl 1>, <&tog 1>;
         };
 
         td_raise: tap_dance_raise {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 2>, <&tog 2>;
+            bindings = <&sl 2>, <&tog 2>;
         };
     };
 
@@ -101,8 +111,8 @@
                     bindings = <
           &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp Q
               &kp Y  &kp P        &kp F                                          &kp G         &kp C         &kp L
-          &kp SEMI  &hml LGUI A  &hml LALT O &hml LSHFT I &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
-          &kp QMARK &kp X        &kp J  &kp DOT  &kp RET                 &kp SPACE  &kp COMMA  &kp B         &kp M         &kp FSLH
+          &kp SEMI  &hml LGUI I  &hml LALT O &hml LSHFT A &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
+          &kp QMARK &kp X        &kp J  &kp DOT  &lt 2 RET               &lt 1 SPACE &kp COMMA  &kp B         &kp M         &kp FSLH
                                                &td_lower                 &td_raise
                     >;
                 };
@@ -124,7 +134,7 @@
       &kp EXCL   &kp AT     &kp HASH                                    &kp CARET  &kp AMPS   &kp ASTRK
             &kp DLLR  &kp PRCNT  &kp GRAVE                              &kp LPAR   &kp RPAR   &kp PIPE
       &kp TILDE &kp LBRC &kp LBKT &kp RBKT &kp RBRC &kp BSLH   &kp MINUS &kp EQUAL &kp UNDER &kp PLUS &kp COLON &kp DQT
-      &trans &trans &trans &trans &trans                       &trans    &trans   &trans    &trans   &trans
+      &trans &trans &trans &mk LCLK &trans                       &trans &mkp RCLK  &trans    &trans   &trans
                              &trans                         &trans
             >;
         };
@@ -144,7 +154,7 @@
             /*  Raton: ambas manos mueven cursor (espejado), pulgares = clics  */
             bindings = <
          &trans         &trans         &trans                                       &trans         &trans       &trans
-         &trans         &trans         &trans                                       &trans         &mkp MCLK    &trans
+         &trans         &trans         &trans                                       &tog 4         &mkp MCLK    &trans
   &trans &msc SCRL_LEFT &msc SCRL_RIGHT &msc SCRL_DOWN &msc SCRL_UP &trans   &trans &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_LEFT &mmv MOVE_RIGHT &trans
   &trans &trans                      &trans         &mkp LCLK       &trans   &trans &mkp RCLK    &trans &trans &trans
                                                                     &tog 4   &tog 4
