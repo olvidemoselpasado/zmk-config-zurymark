@@ -114,7 +114,7 @@
           &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp Q
               &kp Y  &kp P        &kp F                                          &kp G         &kp C         &kp L
           &kp SEMI  &hml LGUI I  &hml LALT O &hml LSHFT A &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
-          &kp QMARK &kp X        &kp J  &kp DOT  &lth 2 RET               &lth 1 SPACE &kp COMMA  &kp B         &kp M         &kp FSLH
+          &kp QMARK &kp X        &kp J  &kp DOT  &lth 2 RET               &lth 1 SPACE &kp M &kp B         &kp COMMA         &kp FSLH
                                                &td_lower                 &td_raise
                     >;
                 };
