@@ -13,9 +13,7 @@
 #include <behaviors/unicode.dtsi>
 
 / {
-    &uc {
-          default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT
-        };
+    
     combos {
         compatible = "zmk,combos";
         combo_backs   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <19 21>; bindings = <&kp BSPC>; };
@@ -101,6 +99,10 @@
             tapping-term-ms = <200>;
             bindings = <&sl 2>, <&tog 2>;
         };
+        
+        &uc {
+          default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT
+        };  
     };
 
     keymap {
