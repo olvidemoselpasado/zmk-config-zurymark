@@ -100,9 +100,9 @@
             bindings = <&sl 2>, <&tog 2>;
         };
 
-        /* uc { */
-        /*   default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT */
-        /* };   */
+        uc {
+          default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT
+        };  
     };
 
     keymap {
@@ -152,7 +152,7 @@
          *  ___24  ___25  ___26 ___27 ___28       ___29 ___30 ___31   ___32 ___33
          *                  ___34               ___35
          */
-         &uc 0xF1 0xD1   // ñ / Ñ
+            // ñ / Ñ
    // á / Á
    // é / É
    // í / Í
@@ -162,8 +162,8 @@
             bindings = <
       &kp EXCL   &kp AT     &kp HASH                                    &kp CARET  &kp AMPS   &kp ASTRK
             &kp DLLR  &kp PRCNT  &kp GRAVE                              &kp LPAR   &kp RPAR   &kp PIPE
-      &uc 0xED 0xCD &uc 0xF3 0xD3 &uc 0xE1 0xC1 &uc 0xE9 0xC9 &uc 0xFA 0xDA   &kp MINUS &kp EQUAL &kp UNDER &kp PLUS &kp COLON &kp DQT
-      &kp TILDE &kp LBRC &kp RBRC &kp LBKT &kp RBKT                      &kp BSLH &trans &trans    &trans   &trans
+      &uc 0xED 0xCD &uc 0xF3 0xD3 &uc 0xE1 0xC1 &uc 0xE9 0xC9 &uc 0xFA 0xDA   &kp MINUS &kp EQUAL &kp UNDER &uc 0xF1 0xD1 &kp COLON &kp DQT
+      &kp TILDE &kp LBRC &kp RBRC &kp LBKT &kp RBKT                      &kp BSLH &trans &kp PLUS    &trans   &trans
                              &trans                         &trans
             >;
         };
