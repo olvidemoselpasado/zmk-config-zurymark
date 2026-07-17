@@ -100,9 +100,9 @@
             bindings = <&sl 2>, <&tog 2>;
         };
 
-        uc {
-          default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT
-        };  
+        /* uc { */
+        /*   default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT */
+        /* };   */
     };
 
     keymap {
