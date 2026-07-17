@@ -12,6 +12,13 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/unicode.dtsi>
 
+&uc {
+  default-mode = <UC_MODE_LINUX>;  // Default to Linux input system
+  minimum-length = <0>;            // Set to desired minimum input length
+  linux-key = <LC(LS(U))>;         // Overwrite Linux compose key
+  win-compose-key = <RALT>;        // Overwrite WinCompose compose key
+};
+
 / {
     
     combos {
@@ -98,11 +105,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sl 2>, <&tog 2>;
-        };
-
-        uc {
-          default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT
-        };  
+        }; 
     };
 
     keymap {
