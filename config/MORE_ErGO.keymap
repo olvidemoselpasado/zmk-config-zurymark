@@ -160,7 +160,7 @@
             &uc 0xA1 0    &uc 0xBF 0     &kp HASH                                           &kp UNDER  &kp QMARK &kp EXCL
             &kp CARET  &kp ASTRK  &kp PLUS                                                  &kp MINUS  &kp FSLH &kp PRCNT
       &kp LT &kp DQT &kp LBKT &kp LBRC &kp LPAR &kp PIPE                &kp EQUAL  &kp RPAR &kp RBRC &kp RBKT &kp COLON &kp GT
-      &AMPS &kp SQT                   &kp AT   &kp DLLR &trans   &uc 0xF1 0xD1 &kp TILDE &kp GRAVE                   &kp SEMI  &kp BSLH
+      &kp AMPS &kp SQT                   &kp AT   &kp DLLR &trans   &uc 0xF1 0xD1 &kp TILDE &kp GRAVE         &kp SEMI  &kp BSLH
                                                          &trans   &trans
             >;
         };
