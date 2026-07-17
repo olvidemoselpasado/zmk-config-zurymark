@@ -99,8 +99,8 @@
             tapping-term-ms = <200>;
             bindings = <&sl 2>, <&tog 2>;
         };
-        
-        &uc {
+
+        uc {
           default-mode = <UC_MODE_LINUX>;  // usa Ctrl+Shift+U (IBus). Si falla en algunas apps, prueba UC_MODE_LINUX_ALT
         };  
     };
