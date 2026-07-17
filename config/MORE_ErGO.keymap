@@ -4,6 +4,7 @@
  */
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 35    
+#define ZMK_UNICODE_TAP_MS 30
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -149,25 +150,18 @@
         raise_layer {
         /*  Símbolos  */
         /*
-         *  !0     @1     #2                          ^3     &4      *5
-         *  $6     %7     `8                           (9     )10     |11
-         *  ~12    {13    [14   ]15  }16 \17       -18  =19   _20     +21   :22   "23
-         *  ___24  ___25  ___26 ___27 ___28       ___29 ___30 ___31   ___32 ___33
-         *                  ___34               ___35
+         *        ¡0     ¿1   #2                             _3   ?4    !5
+         *        ^6     *7   +8                            -9   /10   %11
+         *  <12   "13  [14 {15 (16 |17             =18  )19 }20  ]21   :22  ñ23
+         *  &24 '25          @26 $27  __28   __29 ~30 `31            ;32  \33
+         *                              ___34  ___35
          */
-            // ñ / Ñ
-   // á / Á
-   // é / É
-   // í / Í
-   // ó / Ó
-   // ú / Ú
-
             bindings = <
-      &kp EXCL   &kp AT     &kp HASH                                    &kp CARET  &kp AMPS   &kp ASTRK
-            &kp DLLR  &kp PRCNT  &kp GRAVE                              &kp LPAR   &kp RPAR   &kp PIPE
-      &uc 0xED 0xCD &uc 0xF3 0xD3 &uc 0xE1 0xC1 &uc 0xE9 0xC9 &uc 0xFA 0xDA   &kp MINUS &kp EQUAL &kp UNDER &uc 0xF1 0xD1 &kp COLON &kp DQT
-      &kp TILDE &kp LBRC &kp RBRC &kp LBKT &kp RBKT                      &kp BSLH &trans &kp PLUS    &trans   &trans
-                             &trans                         &trans
+            &uc 0xA1 0    &uc 0xBF 0     &kp HASH                                           &kp UNDER  &kp QMARK &kp EXCL
+            &kp CARET  &kp ASTRK  &kp PLUS                                                  &kp MINUS  &kp FSLH &kp PRCNT
+      &kp LT &kp DQT &kp LBKT &kp LBRC &kp LPAR &kp PIPE                &kp EQUAL  &kp RPAR &kp RBRC &kp RBKT &kp COLON &kp GT
+      &AMPS &kp SQT                   &kp AT   &kp DLLR &trans   &uc 0xF1 0xD1 &kp TILDE &kp GRAVE                   &kp SEMI  &kp BSLH
+                                                         &trans   &trans
             >;
         };
 
