@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2020 The ZMK Contributors
  * SPDX-License-Identifier: MIT
@@ -160,7 +159,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp HASH>, <&kp UNDER>;
+            bindings = <&kp HASH>, <&kp ASTRK>;
         };
 
         td_caret: tap_dance_caret {
@@ -170,53 +169,39 @@
             bindings = <&kp CARET>, <&kp PRCNT>;
         };
 
-        td_astrk: tap_dance_astrk {
+        td_under: tap_dance_under {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp ASTRK>, <&kp FSLH>;
+            bindings = <&kp UNDER>, <&kp EQUAL>;
         };
 
-        td_plus: tap_dance_plus {
+        td_minus: tap_dance_minus {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp PLUS>, <&kp MINUS>;
+            bindings = <&kp MINUS>, <&kp PLUS>;
         };
 
         td_dqt: tap_dance_dqt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DQT>, <&kp COLON>;
+            bindings = <&kp DQT>, <&kp SQT>;
         };
 
         td_pipe: tap_dance_pipe {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp PIPE>, <&kp EQUAL>;
+            bindings = <&kp PIPE>, <&kp AMPS>;
         };
 
-        td_amps: tap_dance_amps {
+        td_grave: tap_dance_grave {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp AMPS>, <&kp BSLH>;
-        };
-
-        td_sqt: tap_dance_sqt {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SQT>, <&kp SEMI>;
-        };
-
-        td_at: tap_dance_at {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp AT>, <&kp GRAVE>;
+            bindings = <&kp GRAVE>, <&kp AT>;
         };
 
         td_dllr: tap_dance_dllr {
@@ -224,6 +209,20 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp DLLR>, <&kp TILDE>;
+        };
+
+        td_colon: tap_dance_colon {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COLON>, <&kp SEMI>;
+        };
+
+        td_fslh: tap_dance_fslh {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
         };
     };
 
@@ -284,17 +283,17 @@
         lower_layer {
              /*  Izquierda = símbolos del raise_layer (tap=izq [autocierra si tiene par], doble tap=espejo derecho del raise_layer) | Derecha = números + nav  */
              /*
-              *  ¡0»!   ¿1»?  ^13»%                          7_3    8_4     9_5
-              *  [6»]   {7»}  (8»)                           4_9    5_10    6_11
-              *  <12»>  #2»*  _14»= -15»+ "16»' |17»&  ___18 1_19  2_20   3_21  0_22  ___23
-              *  __24   `25»@  $26»~ :27»;  /28\      GUI29 UP30 DOWN31 LEFT32 RIGHT33
-              *                    ___34                    ___35
+              *  ¡0»!    ¿1»?    #2»*                        7_3    8_4     9_5
+              *  [6»]    {7»}    (8»)                        4_9    5_10    6_11
+              *  <12»>  ^13»%  _14»=  -15»+  "16»'  |17»&  ___18 1_19  2_20   3_21  0_22  ___23
+              *  ___24   `25»@   $26»~   :27»;   /28»\    GUI29 UP30 DOWN31 LEFT32 RIGHT33
+              *                    ___34                 ___35
               */
                     bindings = <
           &td_excl   &td_ques   &td_hash                                     &kp N7 &kp N8 &kp N9
-               &td_caret   &td_astrk  &td_plus                                  &kp N4 &kp N5 &kp N6
-&td_angle &td_dqt &td_brkt &td_brace &td_paren &td_pipe  &trans &kp N1 &kp N2 &kp N3 &kp N0 &trans
-                 &td_amps &td_sqt &td_at &td_dllr &trans      &kp LGUI     &hmr RCTRL UP &hmr RSHFT DOWN &hmr RALT LEFT &hmr RGUI RIGHT
+               &td_brkt   &td_brace  &td_paren                                  &kp N4 &kp N5 &kp N6
+&td_angle &td_caret &td_under &td_minus &td_dqt &td_pipe  &tog 4 &kp N1 &kp N2 &kp N3 &kp N0 &trans
+                 &trans &td_grave &td_dllr &td_colon &td_fslh      &kp LGUI     &hmr RCTRL UP &hmr RSHFT DOWN &hmr RALT LEFT &hmr RGUI RIGHT
                                              &trans          &trans
                     >;
                 };
