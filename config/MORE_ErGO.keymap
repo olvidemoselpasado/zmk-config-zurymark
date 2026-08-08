@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2020 The ZMK Contributors
  * SPDX-License-Identifier: MIT
@@ -110,6 +111,154 @@
             tapping-term-ms = <200>;
             bindings = <&sl 2>, <&tog 2>;
         }; 
+
+        // Un tap = abre y auto-cierra (cursor queda en medio). Doble tap = solo el símbolo de cierre (lado derecho del raise_layer).
+        td_paren: tap_dance_paren {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_paren_open>, <&kp RPAR>;
+        };
+
+        td_brkt: tap_dance_brkt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_brkt_open>, <&kp RBKT>;
+        };
+
+        td_brace: tap_dance_brace {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_brace_open>, <&kp RBRC>;
+        };
+
+        td_angle: tap_dance_angle {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_angle_open>, <&kp GT>;
+        };
+
+        td_excl: tap_dance_excl {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_excl_open>, <&kp EXCL>;
+        };
+
+        td_ques: tap_dance_ques {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_ques_open>, <&kp QMARK>;
+        };
+
+        // Sin opuesto real: un tap = símbolo izquierdo tal cual. Doble tap = símbolo espejado del lado derecho del raise_layer.
+        td_hash: tap_dance_hash {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp HASH>, <&kp UNDER>;
+        };
+
+        td_caret: tap_dance_caret {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp CARET>, <&kp PRCNT>;
+        };
+
+        td_astrk: tap_dance_astrk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp ASTRK>, <&kp FSLH>;
+        };
+
+        td_plus: tap_dance_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PLUS>, <&kp MINUS>;
+        };
+
+        td_dqt: tap_dance_dqt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DQT>, <&kp COLON>;
+        };
+
+        td_pipe: tap_dance_pipe {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PIPE>, <&kp EQUAL>;
+        };
+
+        td_amps: tap_dance_amps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp AMPS>, <&kp BSLH>;
+        };
+
+        td_sqt: tap_dance_sqt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SQT>, <&kp SEMI>;
+        };
+
+        td_at: tap_dance_at {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp AT>, <&kp GRAVE>;
+        };
+
+        td_dllr: tap_dance_dllr {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DLLR>, <&kp TILDE>;
+        };
+    };
+
+    macros {
+        // Cada uno escribe el símbolo izquierdo del raise_layer + su opuesto, y deja el cursor en medio.
+        mo_paren_open: mo_paren_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+        };
+        mo_brkt_open: mo_brkt_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+        };
+        mo_brace_open: mo_brace_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+        };
+        mo_angle_open: mo_angle_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+        };
+        mo_excl_open: mo_excl_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&uc 0xA1 0 &kp EXCL &kp LEFT>;
+        };
+        mo_ques_open: mo_ques_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&uc 0xBF 0 &kp QMARK &kp LEFT>;
+        };
     };
 
     keymap {
@@ -133,19 +282,19 @@
                 };
 
         lower_layer {
-             /*  Números (izq) + navegación (der) + GUI para Hyprland  */
+             /*  Izquierda = símbolos del raise_layer (tap=izq [autocierra si tiene par], doble tap=espejo derecho del raise_layer) | Derecha = números + nav  */
              /*
-              *  9_0    8_1    7_2                        ___3    ___4     ___5
-              *  4_6    5_7    6_8                        tog4_9  TAB10    ___11
-              *  ___12  3_13   2_14  0_15 1_16 END17  ___18 UP19  DOWN20   LEFT21 RIGHT22 ___23
-              *  ___24  ___25  ___26 HOME27 GUI28     GUI29 ___30 ___31    ___32  ___33
-              *                   ___34               ___35
+              *  ¡0»!   ¿1»?  ^13»%                          7_3    8_4     9_5
+              *  [6»]   {7»}  (8»)                           4_9    5_10    6_11
+              *  <12»>  #2»*  _14»= -15»+ "16»' |17»&  ___18 1_19  2_20   3_21  0_22  ___23
+              *  __24   `25»@  $26»~ :27»;  /28\      GUI29 UP30 DOWN31 LEFT32 RIGHT33
+              *                    ___34                    ___35
               */
                     bindings = <
-          &kp N7   &kp N8   &kp N9                                      &trans    &trans     &trans
-               &kp N4   &kp N5  &kp N6                                  &tog 4 &kp TAB &trans 
-&trans &hml LGUI N0 &hml LALT N3 &hml LSHFT N2 &hml LCTRL N1 &kp END  &trans &hmr RCTRL UP &hmr RSHFT DOWN &hmr RALT LEFT &hmr RGUI RIGHT &trans
-                 &trans &trans &trans &kp HOME &kp LGUI      &kp LGUI     &trans    &trans    &trans     &trans
+          &td_excl   &td_ques   &td_hash                                     &kp N7 &kp N8 &kp N9
+               &td_caret   &td_astrk  &td_plus                                  &kp N4 &kp N5 &kp N6
+&td_angle &td_dqt &td_brkt &td_brace &td_paren &td_pipe  &trans &kp N1 &kp N2 &kp N3 &kp N0 &trans
+                 &td_amps &td_sqt &td_at &td_dllr &trans      &kp LGUI     &hmr RCTRL UP &hmr RSHFT DOWN &hmr RALT LEFT &hmr RGUI RIGHT
                                              &trans          &trans
                     >;
                 };
