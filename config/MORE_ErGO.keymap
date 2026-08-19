@@ -41,6 +41,7 @@
         combo_bt5 { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <28 10>; bindings = <&bt BT_SEL 4>; };
 
         combo_lock   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <1 16 28>; bindings = <&tog LOCK_LAYER>; };
+        combo_lock_lt   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <4 19 29>; bindings = <&tog LOCK_LAYER>; };
 
         combo_bootloader_left {
             timeout-ms = <50>;
@@ -257,14 +258,14 @@
 
         default_layer {
         /*
-         *  K0    W1    Z2                         V3    D4     Q5
+         *  K0    W1    V2                         Z3    D4     Q5
          *  Y6    P7    F8                         G9    C10    L11
          *  ;12   I13   O14  A15 E16 U17       R18 T19   H20    N21  S22 '23
          *  ?24   .25   X26  J27 RET28         SPC29  M30 B31        ,32  /33
          *              toggle=FUNCTION34     toggle=MOUSE35
          */
                     bindings = <
-          &kp K      &kp W        &kp Z                                          &kp V         &kp D                      &kp Q
+          &kp K      &kp W        &kp V                                          &kp Z         &kp D                      &kp Q
               &kp Y  &kp P        &kp F                                          &kp G         &kp C         &kp L
           &kp SEMI  &hml LGUI I  &hml LALT O &hml LSHFT A &hml LCTRL E   &kp U   &kp R  &hmr RCTRL T  &hmr RSHFT H  &hmr RALT N  &hmr RGUI S  &kp SQT
           &kp QMARK &kp DOT        &kp X  &kp J &lth 2 RET               &lth 1 SPACE &kp M &kp B         &kp COMMA         &kp FSLH
