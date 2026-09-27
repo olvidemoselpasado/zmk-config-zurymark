@@ -2,8 +2,8 @@
  * Copyright (c) 2020 The ZMK Contributors
  * SPDX-License-Identifier: MIT
  */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2000
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 35    
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 900   // velocidad máxima del cursor (default ZMK: 6
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // velocidad del scroll (default ZMK: 10)
 #define ZMK_UNICODE_TAP_MS 300
 #define LOCK_LAYER 5
 
@@ -19,6 +19,16 @@
   minimum-length = <0>;            // Set to desired minimum input length
   linux-key = <LC(LS(U))>;         // Overwrite Linux compose key
   win-compose-key = <RALT>;        // Overwrite WinCompose compose key
+};
+
+// Aceleración: arranca lento y llega a la velocidad máxima en 600 ms
+&mmv {
+    time-to-max-speed-ms = <600>;
+    acceleration-exponent = <1>;
+};
+
+&msc {
+    time-to-max-speed-ms = <600>;
 };
 
 / {
@@ -43,12 +53,14 @@
         combo_enter_r  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <21 22>; bindings = <&kp RET>; };
 
         // Ratón por combo: mantener presionado = scroll/movimiento continuo
-        combo_scrl_down { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <15 28>; bindings = <&msc SCRL_DOWN>; };
-        combo_scrl_up   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 20>; bindings = <&msc SCRL_UP>; };
-        combo_mv_up     { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 9>;  bindings = <&mmv MOVE_UP>; };
-        combo_mv_down   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 10>; bindings = <&mmv MOVE_DOWN>; };
-        combo_mv_left   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 11>; bindings = <&mmv MOVE_LEFT>; };
-        combo_mv_right  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 5>;  bindings = <&mmv MOVE_RIGHT>; };
+        combo_scrl_up    { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <15 28>; bindings = <&msc SCRL_UP>; };
+        combo_scrl_down  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <20 29>; bindings = <&msc SCRL_DOWN>; };
+        combo_scrl_left  { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <13 28>; bindings = <&msc SCRL_LEFT>; };
+        combo_scrl_right { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 22>; bindings = <&msc SCRL_RIGHT>; };
+        combo_mv_up      { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <28 7>;  bindings = <&mmv MOVE_UP>; };
+        combo_mv_left    { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <28 6>;  bindings = <&mmv MOVE_LEFT>; };
+        combo_mv_down    { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 10>; bindings = <&mmv MOVE_DOWN>; };
+        combo_mv_right   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <29 11>; bindings = <&mmv MOVE_RIGHT>; };
 
         combo_lock   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <1 16 28>; bindings = <&tog LOCK_LAYER>; };
         combo_lock_lt   { timeout-ms = <40>; require-prior-idle-ms = <150>; key-positions = <4 19 29>; bindings = <&tog LOCK_LAYER>; };
