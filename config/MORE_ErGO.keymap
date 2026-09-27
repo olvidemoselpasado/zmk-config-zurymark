@@ -2,7 +2,7 @@
  * Copyright (c) 2020 The ZMK Contributors
  * SPDX-License-Identifier: MIT
  */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 900   // velocidad máxima del cursor (default ZMK: 6
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 900   // velocidad máxima del cursor (default ZMK: 00)
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // velocidad del scroll (default ZMK: 10)
 #define ZMK_UNICODE_TAP_MS 300
 #define LOCK_LAYER 5
@@ -307,7 +307,7 @@
           &td_excl   &td_ques   &td_hash                                     &kp N7 &kp N8 &kp N9
                &td_brkt   &td_brace  &td_paren                                  &kp N4 &kp N5 &kp N6
 &td_angle &td_caret &td_under &td_minus &td_dqt &td_pipe  &tog 4 &kp N1 &kp N2 &kp N3 &kp N0 &td_home
-                 &trans &td_grave &td_dllr &td_colon &td_fslh      &kp LGUI     &hmr RCTRL UP &hmr RSHFT DOWN &hmr RALT LEFT &hmr RGUI RIGHT
+                 &trans &td_grave &td_dllr &td_colon &td_fslh      &kp LGUI     &kp UP &kp DOWN &kp LEFT &kp RIGHT
                                              &kp SPACE          &trans
                     >;
                 };
