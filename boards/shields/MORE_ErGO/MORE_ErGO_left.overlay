@@ -45,3 +45,26 @@
         , <&pro_micro 14 GPIO_ACTIVE_HIGH>
         ;
 };
+// ── Encender desde soft off SOLO con ENTER (posición 28 = RC(3,5) = col 5, fila 3) ──
+// Al entrar en soft off, ZMK pone en alto únicamente la columna de ENTER (extra-gpios)
+// y deja escuchando la fila de ENTER. Así ninguna otra tecla de esa fila puede despertarlo.
+/ {
+    wakeup_keys {
+        compatible = "gpio-keys";
+        enter_wakeup_key: enter_wakeup_key {
+            gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;   // fila 3 (entrada)
+        };
+    };
+
+    enter_wakeup: enter_wakeup {
+        compatible = "zmk,gpio-key-wakeup-trigger";
+        trigger = <&enter_wakeup_key>;
+        wakeup-source;
+        extra-gpios = <&pro_micro 14 GPIO_ACTIVE_HIGH>;                  // columna 5 (salida)
+    };
+
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&enter_wakeup>;
+    };
+};
